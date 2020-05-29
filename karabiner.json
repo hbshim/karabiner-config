@@ -1,0 +1,1462 @@
+{
+    "global": {
+        "check_for_updates_on_startup": true,
+        "show_in_menu_bar": true,
+        "show_profile_name_in_menu_bar": false
+    },
+    "profiles": [
+        {
+            "complex_modifications": {
+                "parameters": {
+                    "basic.simultaneous_threshold_milliseconds": 50,
+                    "basic.to_delayed_action_delay_milliseconds": 1500,
+                    "basic.to_if_alone_timeout_milliseconds": 1000,
+                    "basic.to_if_held_down_threshold_milliseconds": 500,
+                    "mouse_motion_to_scroll.speed": 100
+                },
+                "rules": [
+    {
+      "description": "Emacs key bindings",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "d",
+            "modifiers": {
+              "mandatory": [
+                  "command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "delete_forward"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "b",
+            "modifiers": {
+              "mandatory": [
+                  "command"
+              ],
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "C-x",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f",
+            "modifiers": {
+              "mandatory": [
+                  "command"
+              ],
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "C-x",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "n",
+            "modifiers": {
+              "mandatory": [
+                  "command"
+              ],
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "down_arrow"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                  "^org\\.gnu\\.Emacs$",
+                  "^com\\.apple\\.quicklook*$",
+                  "^com\\.apple\\.quicklook\\.ui\\.helper$",
+                  "^com\\.apple\\.quicklook\\.QuickLookUIService$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "p",
+            "modifiers": {
+              "mandatory": [
+                "command"
+              ],
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "up_arrow"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                  "^org\\.gnu\\.Emacs$",
+                  "^com\\.apple\\.quicklook\\.qlmanage$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "v",
+            "modifiers": {
+              "mandatory": [
+                "command"
+              ],
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "page_down"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "v",
+            "modifiers": {
+              "mandatory": [
+                "option"
+              ],
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "page_up"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "a",
+            "modifiers": {
+              "mandatory": [
+                "command"
+              ],
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": {
+              "key_code": "left_arrow",
+              "modifiers": "command"
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "e",
+            "modifiers": {
+              "mandatory": [
+                "command"
+              ],
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": {
+              "key_code": "right_arrow",
+              "modifiers": "command"
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "r",
+            "modifiers": {
+              "mandatory": [
+                "command"
+              ]
+            }
+          },
+            "to":  [
+                {
+                    "set_variable": {
+                        "name": "C-s",
+                        "value": 1
+                    }
+                },
+                {
+              "key_code": "f",
+              "modifiers": "command"
+                }
+            ],
+            "conditions": [ { "type": "variable_unless", "name": "C-s", "value": 1},
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "s",
+            "modifiers": {
+              "mandatory": [
+                "command"
+              ]
+            }
+          },
+            "to":  [
+                {
+                    "set_variable": {
+                        "name": "C-s",
+                        "value": 1
+                    }
+                },
+                {
+              "key_code": "f",
+              "modifiers": "command"
+                }
+            ],
+            "conditions": [ { "type": "variable_unless", "name": "C-s", "value": 1}, { "type": "variable_unless", "name": "C-x", "value": 1},
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "r",
+            "modifiers": {
+              "mandatory": [
+                "command"
+              ]
+            }
+          },
+            "to":  [
+                {
+                    "set_variable": {
+                        "name": "C-s",
+                        "value": 1
+                    }
+                },
+                {
+              "key_code": "g",
+                    "modifiers": ["command", "shift"]
+                }
+            ],
+            "conditions": [ { "type": "variable_if", "name": "C-s", "value": 1},
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "s",
+            "modifiers": {
+              "mandatory": [
+                "command"
+              ]
+            }
+          },
+            "to":  [
+                {
+                    "key_code": "g",
+                    "modifiers": "command"
+                }
+            ],
+            "conditions": [ { "type": "variable_if", "name": "C-s", "value": 1}, { "type": "variable_unless", "name": "C-x", "value": 1},
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f",
+            "modifiers": {
+              "mandatory": [
+                  "command"
+              ],
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            },
+            {
+              "type": "variable_unless",
+              "name": "C-x",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f",
+            "modifiers": {
+              "mandatory": [
+                  "command"
+              ],
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+                "key_code": "o", "modifiers": "command"
+            },
+              { "set_variable": { "name": "C-x", "value": 0}}
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "C-x",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "g",
+            "modifiers": {
+              "mandatory": [
+                "command"
+              ]
+            }
+          },
+          "to": [{
+              "key_code": "escape"
+          },
+                 { "set_variable": {"name": "C-s", "value": 0} },
+                 { "set_variable": {"name": "C-x", "value": 0} },
+                 { "set_variable": {"name": "C-x_5", "value": 0} },
+                 { "set_variable": {"name": "C-h", "value": 0} },
+                 { "set_variable": {"name": "finder_R", "value": 0} }
+                ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "escape"
+          },
+          "to": [{
+              "key_code": "escape"
+          },
+                 { "set_variable": {"name": "C-s", "value": 0} },
+                 { "set_variable": {"name": "C-x", "value": 0} },
+                 { "set_variable": {"name": "C-x_5", "value": 0} },
+                 { "set_variable": {"name": "C-h", "value": 0} },
+                 { "set_variable": {"name": "finder_R", "value": 0} }
+                ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "return_or_enter"
+          },
+            "to": [{ "set_variable": { "name": "C-s", "value": 0 }},
+                   { "key_code": "escape" }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }, {
+                "type": "variable_if",
+                "name": "C-s",
+                "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f10"
+          },
+          "to": [{
+              "key_code": "f2",
+              "modifiers": "control"
+          }, { "key_code": "down_arrow"}, { "key_code": "right_arrow"}]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "b",
+            "modifiers": {
+              "mandatory": [
+                "option"
+              ],
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": {
+              "key_code": "left_arrow",
+              "modifiers": "option"
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "f",
+            "modifiers": {
+              "mandatory": [
+                "option"
+              ],
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": {
+              "key_code": "right_arrow",
+              "modifiers": "option"
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "comma",
+            "modifiers": {
+              "mandatory": [
+                  "option", "shift"
+              ],
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": {
+              "key_code": "home"
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "period",
+            "modifiers": {
+              "mandatory": [
+                  "option", "shift"
+              ],
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": {
+              "key_code": "end"
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "x",
+            "modifiers": {
+              "mandatory": [
+                "command"
+              ]
+            }
+          },
+            "to": [
+            {
+              "set_variable": {
+                "name": "C-x",
+                "value": 1
+              }
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+                {
+                "set_variable": {
+                  "name": "C-x",
+                  "value": 0
+                }
+              }
+            ]
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "5"
+          },
+            "to": [
+                {"set_variable": { "name": "C-x_5", "value": 1 }},
+                {"set_variable": { "name": "C-x", "value": 0 }}
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              { "set_variable": { "name": "C-x_5", "value": 0 } }
+            ]
+          },
+          "conditions": [
+            { "type": "variable_if", "name": "C-x", "value": 1 }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+              "key_code": "o"
+          },
+          "to": [
+              { "key_code": "grave_accent_and_tilde",
+                "modifiers": "command" },
+              { "set_variable": { "name": "C-x_5", "value": 0 } }
+          ],
+          "conditions": [
+            { "type": "variable_if", "name": "C-x_5", "value": 1 }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+              "key_code": "o", "modifiers": { "mandatory": "shift"}
+          },
+          "to": [
+              { "key_code": "grave_accent_and_tilde",
+                "modifiers": ["command", "shift"] },
+              { "set_variable": { "name": "C-x_5", "value": 0 } }
+          ],
+          "conditions": [
+            { "type": "variable_if", "name": "C-x_5", "value": 1 }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+              "key_code": "0"
+          },
+          "to": [
+              { "key_code": "w",
+                "modifiers": ["command"] },
+              { "set_variable": { "name": "C-x_5", "value": 0 } }
+          ],
+          "conditions": [
+            { "type": "variable_if", "name": "C-x_5", "value": 1 }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+              "key_code": "2"
+          },
+          "to": [
+              { "key_code": "n",
+                "modifiers": ["command"] },
+              { "set_variable": { "name": "C-x_5", "value": 0 } }
+          ],
+          "conditions": [
+            { "type": "variable_if", "name": "C-x_5", "value": 1 }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "b",
+            "modifiers": {
+              "mandatory": [
+                  "command"
+              ]
+            }
+          },
+          "to": [
+            {
+                "key_code": "down_arrow", "modifiers": "control"
+            },
+              { "set_variable": { "name": "C-x", "value": 0}}
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "C-x",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "c",
+            "modifiers": {
+              "mandatory": [
+                  "command"
+              ]
+            }
+          },
+          "to": [
+            {
+                "key_code": "q", "modifiers": "command"
+            },
+              { "set_variable": { "name": "C-x", "value": 0}}
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "C-x",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "q",
+            "modifiers": {
+              "mandatory": [
+                  "command"
+              ],
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            },
+              { "type": "variable_unless", "name": "C-x", "value": 1 }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "s",
+            "modifiers": {
+              "mandatory": [
+                  "command"
+              ]
+            }
+          },
+          "to": [
+            {
+                "key_code": "s", "modifiers": "command"
+            },
+              { "set_variable": { "name": "C-x", "value": 0}}
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "C-x",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "w",
+            "modifiers": {
+              "mandatory": [
+                  "command"
+              ]
+            }
+          },
+          "to": [
+            {
+                "key_code": "s", "modifiers": ["command", "shift"]
+            },
+              { "set_variable": { "name": "C-x", "value": 0}}
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "C-x",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "slash",
+            "modifiers": {
+              "mandatory": [
+                "command"
+              ]
+            }
+          },
+            "to":  [
+                {
+                    "key_code": "z",
+                    "modifiers": "command"
+                }
+            ],
+            "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "w",
+            "modifiers": {
+              "mandatory": [
+                "command"
+              ]
+            }
+          },
+            "to":  [
+                {
+                    "key_code": "x",
+                    "modifiers": "command"
+                }
+            ],
+            "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "w",
+            "modifiers": {
+              "mandatory": [
+                "option"
+              ]
+            }
+          },
+            "to":  [
+                {
+                    "key_code": "c",
+                    "modifiers": "command"
+                }
+            ],
+            "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "y",
+            "modifiers": {
+              "mandatory": [
+                "command"
+              ]
+            }
+          },
+            "to":  [
+                {
+                    "key_code": "v",
+                    "modifiers": "command"
+                }
+            ],
+            "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "z",
+            "modifiers": {
+              "mandatory": [
+                  "command"
+              ],
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "c",
+            "modifiers": {
+              "mandatory": [
+                  "command", "shift"
+              ]
+            }
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "y",
+            "modifiers": {
+              "mandatory": [
+                  "command", "shift"
+              ]
+            }
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "x",
+            "modifiers": {
+              "mandatory": [
+                  "command", "shift"
+              ]
+            }
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "h",
+            "modifiers": {
+              "mandatory": [
+                "command"
+              ]
+            }
+          },
+            "to": [
+            {
+              "set_variable": {
+                "name": "C-h",
+                "value": 1
+              }
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+                {
+                "set_variable": {
+                  "name": "C-h",
+                  "value": 0
+                }
+              }
+            ]
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+              "key_code": "i"
+          },
+          "to": [
+              { "key_code": "slash",
+                "modifiers": ["command", "shift"] },
+              { "set_variable": { "name": "C-h", "value": 0 } }
+          ],
+          "conditions": [
+            { "type": "variable_if", "name": "C-h", "value": 1 }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "d",
+            "modifiers": {
+              "mandatory": [
+                  "command", "fn"
+              ]
+            }
+          },
+            "to": [
+                { "key_code": "d", "modifiers": "command" }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "p",
+            "modifiers": {
+              "mandatory": [
+                  "command", "fn"
+              ]
+            }
+          },
+            "to": [
+                { "key_code": "p", "modifiers": "command" }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$",
+                "^com\\.apple\\.quicklook\\.qlmanage$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "r",
+            "modifiers": {
+              "mandatory": [
+                  "shift"
+              ]
+            }
+          },
+            "to": [
+                { "key_code": "return_or_enter" },
+                { "key_code": "right_arrow" },
+                { "set_variable": {"name": "finder_R", "value": 1}}
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.apple\\.finder$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "return_or_enter"
+          },
+            "to": [
+                { "key_code": "o", "modifiers": "command" }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.apple\\.finder$"
+              ]
+            },
+              { "type": "variable_unless", "name": "finder_R", "value": 1 }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "return_or_enter"
+          },
+            "to": [
+                { "key_code": "return_or_enter" },
+                { "set_variable": {"name": "finder_R", "value": 0}}
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.apple\\.finder$"
+              ]
+            },
+              { "type": "variable_if", "name": "finder_R", "value": 1 }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+              "key_code": "d", "modifiers": { "mandatory": ["shift"]}
+          },
+            "to": [
+                { "key_code": "delete_or_backspace", "modifiers": "command" }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.apple\\.finder$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+              "key_code": "c", "modifiers": { "mandatory": ["shift"]}
+          },
+            "to": [
+                { "key_code": "d", "modifiers": "command" }
+            ],
+            "to_delayed_action": {
+                "to_if_invoked": [
+                    { "key_code": "return_or_enter" },
+                    { "key_code": "right_arrow" },
+                    { "set_variable": {"name": "finder_R", "value": 1}}
+                ],
+                "to_if_canceled": [
+                    { "key_code": "return_or_enter" },
+                    { "key_code": "right_arrow" },
+                    { "set_variable": {"name": "finder_R", "value": 1}}
+                ]
+            },
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.apple\\.finder$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "b",
+            "modifiers": {
+              "mandatory": [
+                  "command", "fn"
+              ]
+            }
+          },
+            "to": [
+                { "key_code": "b", "modifiers": "command" }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "n",
+            "modifiers": {
+              "mandatory": [
+                  "command", "shift", "fn"
+              ]
+            }
+          },
+            "to": [
+                { "key_code": "n", "modifiers": ["command", "shift"] }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$",
+                "^com\\.apple\\.quicklook\\.qlmanage$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "n",
+            "modifiers": {
+              "mandatory": [
+                  "command"
+              ]
+            }
+          },
+            "to": [
+                { "key_code": "down_arrow",
+                  "modifiers": [
+                      "control", "option", "shift", "command"
+                  ] }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.apple\\.quicklook\\.qlmanage$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "p",
+            "modifiers": {
+              "mandatory": [
+                  "command"
+              ]
+            }
+          },
+            "to": [
+                { "key_code": "up_arrow",
+                  "modifiers": [
+                      "control", "option", "shift", "command"
+                  ] }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.apple\\.quicklook\\.qlmanage$"
+              ]
+            }
+          ]
+        }
+
+
+
+
+
+      ]
+    }
+  ]
+
+            },
+            "devices": [],
+            "fn_function_keys": [
+                {
+                    "from": {
+                        "key_code": "f1"
+                    },
+                    "to": {
+                        "consumer_key_code": "display_brightness_decrement"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "f2"
+                    },
+                    "to": {
+                        "consumer_key_code": "display_brightness_increment"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "f3"
+                    },
+                    "to": {
+                        "key_code": "mission_control"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "f4"
+                    },
+                    "to": {
+                        "key_code": "launchpad"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "f5"
+                    },
+                    "to": {
+                        "key_code": "illumination_decrement"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "f6"
+                    },
+                    "to": {
+                        "key_code": "illumination_increment"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "f7"
+                    },
+                    "to": {
+                        "consumer_key_code": "rewind"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "f8"
+                    },
+                    "to": {
+                        "consumer_key_code": "play_or_pause"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "f9"
+                    },
+                    "to": {
+                        "consumer_key_code": "fastforward"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "f10"
+                    },
+                    "to": {
+                        "consumer_key_code": "mute"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "f11"
+                    },
+                    "to": {
+                        "consumer_key_code": "volume_decrement"
+                    }
+                },
+                {
+                    "from": {
+                        "key_code": "f12"
+                    },
+                    "to": {
+                        "consumer_key_code": "volume_increment"
+                    }
+                }
+            ],
+            "name": "Default profile",
+            "parameters": {
+                "delay_milliseconds_before_open_device": 1000
+            },
+            "selected": true,
+            "simple_modifications": [],
+            "virtual_hid_keyboard": {
+                "country_code": 0,
+                "mouse_key_xy_scale": 100
+            }
+        }
+    ]
+}
